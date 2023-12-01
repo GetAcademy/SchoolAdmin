@@ -1,0 +1,20 @@
+﻿@startuml
+
+class School
+class Teacher
+class Student
+class Subject 
+class Class
+class Room
+class Weekplan
+
+School -- Teacher
+Class -- Student
+Class -- Subject
+Class -- Teacher
+School -- Class
+Class -- Room
+School -- Subject
+Class -- Weekplan
+
+@enduml
