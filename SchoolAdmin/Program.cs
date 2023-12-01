@@ -4,14 +4,19 @@ using SchoolAdmin;
 
 Console.WriteLine("Hello, World!");
 
+var startDate = new DateTime(2023, 8, 7);
 var getAcademy = new School("GET Academy");
 var emne1 = getAcademy.CreateSubject("Emne 1");
 var emne2 = getAcademy.CreateSubject("Emne 2");
 var emne3 = getAcademy.CreateSubject("Emne 3");
 var mads= getAcademy.CreateStudent("Mads");
 var gerry= getAcademy.CreateStudent("Gerry");
-getAcademy.RegisterStudentForSubject(emne1, mads, new DateTime(2023, 8, 7));
-getAcademy.RegisterStudentForSubject(emne1, gerry, new DateTime(2023, 8, 7));
+getAcademy.RegisterStudentForSubject(emne1, mads, startDate);
+getAcademy.RegisterStudentForSubject(emne1, gerry, startDate);
+mads.GetWeekplan().Show();
+gerry.GetWeekplan().Show();
+var theClass = getAcademy.GetClass(startDate);
+theClass.GetWeekplan().Show();
 
 
 /*

@@ -38,14 +38,14 @@
 
         public void RegisterStudentForSubject(Subject subject, Student student, DateTime startDate)
         {
-            // var theClass = _classes.SingleOrDefault(c => c.StartDate == startDate) ?? CreateClass(startDate);
-            var theClass = _classes.SingleOrDefault(c => c.StartDate == startDate);
-            if (theClass == null)
-            {
-                theClass = CreateClass(startDate, subject);
-            }
-
+            var theClass = GetClass(startDate) ?? CreateClass(startDate, subject);
             theClass.RegisterStudent(student);
+        }
+
+        public Class? GetClass(DateTime startDate)
+        {
+            // var theClass = _classes.SingleOrDefault(c => c.StartDate == startDate) ?? CreateClass(startDate);
+            return _classes.SingleOrDefault(c => c.StartDate == startDate);
         }
     }
 }
