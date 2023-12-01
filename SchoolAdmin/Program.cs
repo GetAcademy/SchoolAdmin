@@ -13,10 +13,14 @@ var mads= getAcademy.CreateStudent("Mads");
 var gerry= getAcademy.CreateStudent("Gerry");
 getAcademy.RegisterStudentForSubject(emne1, mads, startDate);
 getAcademy.RegisterStudentForSubject(emne1, gerry, startDate);
-mads.GetWeekplan().Show();
-gerry.GetWeekplan().Show();
+getAcademy.RegisterStudentForSubject(emne2, mads, startDate);
+getAcademy.RegisterStudentForSubject(emne3, gerry, startDate);
+
 var theClass = getAcademy.GetClass(startDate);
 theClass.GetWeekplan().Show();
+
+mads.GetWeekplan().Show();
+gerry.GetWeekplan().Show();
 
 
 /*
